@@ -1,0 +1,19 @@
+{
+  "name": "fosa",
+  "version": "0.1.0",
+  "description": "Database migration tools for NodeJS",
+  "main": "index.js",
+  "repository": "https://github.com/ratsimba/fosa.git",
+  "author": "Sitraka Ratsimba <sitraka.ratsimba@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "lab --lint"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "lab": "18.x.x",
+    "code": "5.x.x"
+  }
+}
