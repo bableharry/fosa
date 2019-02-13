@@ -7,7 +7,7 @@
   "author": "Sitraka Ratsimba <sitraka.ratsimba@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "test": "lab --lint"
+    "test": "lab --lint --coverage"
   },
   "engines": {
     "node": ">=10.0.0"

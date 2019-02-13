@@ -3,8 +3,12 @@
 
 // Load modules.
 
+const Fs = require('fs');
+
 const Lab = require('lab');
 const Util  = require('../lib/util');
+
+const { promisify } = require('util');
 
 
 const { expect } = require('code');
@@ -25,5 +29,21 @@ experiment('util', () => {
 
         const exists = await Util.directoryExists('doesNotExists');
         expect(exists).to.be.false();
+    });
+
+    test('createDirectory returns true after the directory was created', async () => {
+
+        const created = await Util.createDirectory('test/dir');
+        expect(created).to.be.true();
+
+        // Clean up test.
+        const rmdir = promisify(Fs.rmdir);
+        await rmdir('test/dir');
+    });
+
+    test('createDirectory returns false if fails', async () => {
+
+        const created = await Util.createDirectory('test/migration');
+        expect(created).to.be.false();
     });
 });
